@@ -12,8 +12,16 @@ public class Likes {
     private boolean isLike;
     @OneToOne
     private Users users;
-
     @ManyToOne
     private Post post;
+    public Likes() {
+
+    }
+
+    public Likes(Users users, Post post) {
+        this.users = users;
+        this.post = post;
+    }
+
 
 }

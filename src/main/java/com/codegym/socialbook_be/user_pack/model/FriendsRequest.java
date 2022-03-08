@@ -3,18 +3,18 @@ package com.codegym.socialbook_be.user_pack.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Data
-public class Post {
+public class FriendsRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String content;
-    private boolean isPublic;
-    private String image;
-    private Date time;
+    String status;
+
     @ManyToOne
-    private Users users;
+    private Users sender;
+
+    @ManyToOne
+    private Users receiver;
 }

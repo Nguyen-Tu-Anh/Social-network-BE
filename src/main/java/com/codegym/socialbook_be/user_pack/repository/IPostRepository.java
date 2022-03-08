@@ -11,4 +11,6 @@ import java.util.List;
 public interface IPostRepository extends JpaRepository<Post, Long> {
     @Query(nativeQuery = true, value = "SELECT * FROM social_book.post order by time desc")
     List<Post> findAllShortByTime();
+
+
 }

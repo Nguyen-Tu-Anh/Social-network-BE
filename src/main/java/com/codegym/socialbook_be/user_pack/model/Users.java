@@ -19,7 +19,7 @@ import java.util.Set;
                 "email"
         })
 })
-public class    Users {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
