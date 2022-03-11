@@ -20,6 +20,11 @@ public class CommentServiceImpl implements ICommentService {
     UserDetailService userDetailService;
 
     @Override
+    public List<Comment> findAll() {
+        return commentRepo.findAll();
+    }
+
+    @Override
     public List<Comment> getCommentByPostId(Long id) {
         return commentRepo.getCommentByPostId(id);
     }

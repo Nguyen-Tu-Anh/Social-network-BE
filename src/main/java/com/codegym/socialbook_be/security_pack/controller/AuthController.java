@@ -9,6 +9,8 @@ import com.codegym.socialbook_be.security_pack.dto.response.ResponseMessage;
 
 import com.codegym.socialbook_be.security_pack.model.Role;
 import com.codegym.socialbook_be.security_pack.model.RoleName;
+import com.codegym.socialbook_be.security_pack.service.IRoleService;
+import com.codegym.socialbook_be.security_pack.service.IUserService;
 import com.codegym.socialbook_be.user_pack.model.Users;
 import com.codegym.socialbook_be.security_pack.security.jwt.JwtProvider;
 import com.codegym.socialbook_be.security_pack.security.jwt.JwtTokenFilter;
@@ -35,9 +37,9 @@ import java.util.Set;
 @RestController
 public class AuthController {
     @Autowired
-    UserServiceImpl userService;
+    IUserService userService;
     @Autowired
-    RoleServiceImpl roleService;
+    IRoleService roleService;
     @Autowired
     PasswordEncoder passwordEncoder;
     @Autowired

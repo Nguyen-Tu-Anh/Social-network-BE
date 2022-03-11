@@ -9,7 +9,6 @@ public class Likes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private boolean isLike;
     @OneToOne
     private Users users;
     @ManyToOne

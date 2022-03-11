@@ -3,15 +3,20 @@ package com.codegym.socialbook_be.security_pack.service.impl;
 import com.codegym.socialbook_be.user_pack.model.Users;
 import com.codegym.socialbook_be.security_pack.repository.IUserRepository;
 import com.codegym.socialbook_be.security_pack.service.IUserService;
+import com.codegym.socialbook_be.user_pack.repository.IFriendRequestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
     IUserRepository userRepository;
+
+    @Autowired
+    IFriendRequestRepo iFriendRequestRepo;
     @Override
     public Optional<Users> findByUsername(String name) {
         return userRepository.findByUsername(name);
@@ -35,4 +40,12 @@ public class UserServiceImpl implements IUserService {
     public Optional<Users> findById(Long id) {
         return userRepository.findById(id);
     }
+
+    @Override
+    public List<Users> findAll() {
+        return userRepository.findAll();
+    }
+
+
+
 }
